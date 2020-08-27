@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="title text-center">
+					<h2>{{ with .Title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+						{{ with .Title }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
+					<div class="border-meghna"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		{{ .Content }}
+	</div>
+</section>
+
+{{ end }}
